@@ -10,9 +10,9 @@ part 'user_bloc.freezed.dart';
 class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc() : super(UserState.initial()) {
     on<FetchApiEvent>((event, emit) async {
-      emit(const UserState(loading: true));
+      emit(state.copyWith(loading: true));
       var result = await ApiService.fetchUser();
-      emit(UserState(loading: false, userModel: result));
+      emit(state.copyWith(loading: false, userModel: result));
     });
   }
 }
