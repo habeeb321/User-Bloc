@@ -1,12 +1,11 @@
 part of 'user_bloc.dart';
 
-class UserState {
-  final bool loading;
-  UserModel? userModel;
+@freezed
+class UserState with _$UserState {
+  const factory UserState({
+    required bool loading,
+    UserModel? userModel,
+  }) = _UserState;
 
-  UserState({required this.loading, this.userModel});
-}
-
-class UserInitial extends UserState {
-  UserInitial({required super.loading});
+  factory UserState.initial() => const UserState(loading: false);
 }

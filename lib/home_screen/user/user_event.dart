@@ -1,6 +1,6 @@
 part of 'user_bloc.dart';
 
-@immutable
-abstract class UserEvent {}
-
-class FetchApiEvent extends UserEvent {}
+@freezed
+class UserEvent with _$UserEvent {
+  const factory UserEvent.fetchApiEvent() = FetchApiEvent;
+}

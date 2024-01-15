@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          context.read<UserBloc>().add(FetchApiEvent());
+          context.read<UserBloc>().add(const FetchApiEvent());
         },
         label: const Text("Fetch API"),
       ),
